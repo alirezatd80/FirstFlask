@@ -10,7 +10,7 @@ db = SQLAlchemy(app)
 class FirstProjectFlask(db.Model):
     id = db.Column(db.Integer,primary_key = True)
     content = db.Column(db.Text,unique = True , nullable = False)
-    date =db.Column(db.Datetime , default = datetime.now)
+    date =db.Column(db.DateTime , default = datetime.now)
     
     def __repr__(self) :
         return f'FirstProjectFlask({self.id} - {self.content} - {self.date})'
