@@ -3,7 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///firstFlask.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///flask.db'
 db = SQLAlchemy(app)
 
 
@@ -13,7 +13,7 @@ class FirstProjectFlask(db.Model):
     date =db.Column(db.DateTime , default = datetime.now)
     
     def __repr__(self) :
-        return f'FirstProjectFlask({self.id} - {self.content} - {self.date})'
+        return f'myFirstProject({self.id} - {self.content} - {self.date})'
     
     
 
