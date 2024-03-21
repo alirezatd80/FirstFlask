@@ -40,5 +40,10 @@ def about():
     
     return render_template('about.html')
 
+@app.route('/<user_id>')
+def UserPage(user_id):
+    user = FirstProjectFlask.query.get(user_id)
+    return render_template('UserPage.html',user = user)
+
 if __name__ == "__main__":
     app.run(debug=True)
