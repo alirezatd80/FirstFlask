@@ -1,4 +1,4 @@
-from flask import Flask,render_template
+from flask import Flask,render_template,redirect,url_for
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
@@ -45,5 +45,15 @@ def UserPage(user_id):
     user = FirstProjectFlask.query.get(user_id)
     return render_template('UserPage.html',user = user)
 
+@app.route('/delete/<user_id>')
+def Delete(user_id):
+    user = FirstProjectFlask.query.get(user_id)
+    db.session.delete(user)
+    db.session.commit()
+    return redirect(url_for('home'))
+    
+    
+    
+    
 if __name__ == "__main__":
     app.run(debug=True)

@@ -4,7 +4,7 @@
     
   {% block content %}
 
-    <a class="btn btn-danger" href=""> Delete</a>
+    <a class="btn btn-danger" href="{{ url_for('Delete',user_id = user.id) }}"> Delete</a>
     <h1>{{ user.content }}</h1>
     <h4>{{ user.date }}</h4>
 
