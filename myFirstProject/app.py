@@ -20,10 +20,13 @@ def addInDB(text):
     model1 = FirstProjectFlask(content = text)
     db.session.add(model1)
     db.session.commit()
-    
+
+def getAll():
+   mylist = FirstProjectFlask.query.all()
+   return mylist
         
 with app.app_context():
-    
+      
        db.create_all()
    
 
