@@ -8,5 +8,12 @@
           <h1> <a href="{{ url_for('UserPage', user_id=x.id) }}">{{ x.content }} </a></h1>
           <h4>{{ x.date }}</h4>
     {% endfor %}
+    <br>
+    <br>
+    <br>
+    <form action="{{ url_for('AddUser') }}" method="post">
+      <input type="text" name="username" id="name"/>
+      <button type="submit" class="btn btn-success">Add User</button>
+  </form>
 
   {% endblock %}

@@ -1,4 +1,4 @@
-from flask import Flask,render_template,redirect,url_for
+from flask import Flask,render_template,redirect,url_for,request
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
@@ -51,8 +51,13 @@ def Delete(user_id):
     db.session.delete(user)
     db.session.commit()
     return redirect(url_for('home'))
-    
-    
+
+@app.route('/add_user', methods=['POST']) 
+def AddUser():
+    username = request.form['username']
+    addInDB(username)
+    return redirect(url_for('home'))
+        
     
     
 if __name__ == "__main__":
