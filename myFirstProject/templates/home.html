@@ -5,7 +5,7 @@
   {% block content %}
 
     {% for x in information %}
-          <h1>{{ x.content }}</h1>
+          <h1> <a href="{{ url_for('UserPage', user_id=x.id) }}">{{ x.content }} </a></h1>
           <h4>{{ x.date }}</h4>
     {% endfor %}
 
