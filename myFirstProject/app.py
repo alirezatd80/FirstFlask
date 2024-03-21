@@ -16,6 +16,9 @@ class FirstProjectFlask(db.Model):
         return f'myFirstProject({self.id} - {self.content} - {self.date})'
     
     
+with app.app_context():
+    
+    db.create_all()
 
 @app.route('/')
 def  home():
