@@ -16,16 +16,20 @@ class FirstProjectFlask(db.Model):
         return f'myFirstProject({self.id} - {self.content} - {self.date})'
     
     
+        
 with app.app_context():
     
-    db.create_all()
+       db.create_all()
+   
 
 @app.route('/')
 def  home():
+    
     return render_template('home.html')
 
 @app.route('/about')
 def about():
+    
     return render_template('about.html')
 
 if __name__ == "__main__":
