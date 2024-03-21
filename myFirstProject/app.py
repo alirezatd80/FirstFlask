@@ -32,8 +32,8 @@ with app.app_context():
 
 @app.route('/')
 def  home():
-    
-    return render_template('home.html')
+    myDB = getAll()
+    return render_template('home.html',information = myDB)
 
 @app.route('/about')
 def about():

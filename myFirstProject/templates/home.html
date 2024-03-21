@@ -3,5 +3,10 @@
 {% block title %} Home {% endblock %}
     
   {% block content %}
-    <h3>home page</h3>
+
+    {% for x in information %}
+          <h1>{{ x.content }}</h1>
+          <h4>{{ x.date }}</h4>
+    {% endfor %}
+
   {% endblock %}
