@@ -15,6 +15,11 @@ class FirstProjectFlask(db.Model):
     def __repr__(self) :
         return f'myFirstProject({self.id} - {self.content} - {self.date})'
     
+def addInDB(text):
+
+    model1 = FirstProjectFlask(content = text)
+    db.session.add(model1)
+    db.session.commit()
     
         
 with app.app_context():
